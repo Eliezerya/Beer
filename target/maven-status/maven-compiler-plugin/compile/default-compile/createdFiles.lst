@@ -1,0 +1,3 @@
+com\Exercise\Beer\web\mappers\CustomerMappers.class
+com\Exercise\Beer\web\mappers\CustomerMappersImpl.class
+com\Exercise\Beer\domain\Customer.class
