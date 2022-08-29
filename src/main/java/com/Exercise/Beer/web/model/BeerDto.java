@@ -4,13 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
 
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Null;
-import javax.validation.constraints.Positive;
-import javax.validation.constraints.Size;
-import java.sql.Timestamp;
+import javax.validation.constraints.*;
+import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -21,14 +17,30 @@ import java.util.UUID;
 public class BeerDto {
     @Null
     private UUID id;
-    @NotBlank// used for validating input from the user, if there no data to inputed
-    @Size(max =30)
-    private String beerName;
-    @NotBlank
-    @Size(min =3, max = 30)
-    private String beerStyle;
-    @Positive
-    private long upc;
+
+    @Null
+    private Integer version;
+
+    @Null
     private OffsetDateTime createdAt;
+    @Null
     private OffsetDateTime updatedAt;
+
+
+    @NotBlank// used for validating input from the user, if there no data to inputed
+//    @Size(max =30)
+    private String beerName;
+//    @Size(min =3, max = 30)
+    @NotBlank
+    private BeerStyleEnum beerStyle;
+
+    @Positive
+    @NotNull
+    private long upc;
+
+    @Positive
+    @NotNull
+    private BigDecimal price;
+
+    private Integer quantityOnHand;
 }

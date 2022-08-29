@@ -1,6 +1,7 @@
 package com.Exercise.Beer.web.model.v2;
 
 
+import com.Exercise.Beer.web.model.BeerStyleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
